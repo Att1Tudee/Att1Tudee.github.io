@@ -32,7 +32,6 @@
         }
 
        
-
         .item2 {
             grid-column: 1 / span 3;
             grid-row: 2;
@@ -96,7 +95,7 @@
             display: block;
         }
 
-        /* Input-alue linkeille*/
+        /* Input area for links*/
 
         #pagename {
             font-size: 50px;
@@ -159,7 +158,7 @@
 
         }
 
-        /* JAVASCRIPT-OSIO */
+        /* JAVASCRIPT area */
 
         #JS {
             color: #811cd4;
@@ -184,7 +183,7 @@
                         </ul>
                     </li>
                     <!-- Opiskelu-->
-                    <li><span class="caret">Opiskelu</span>
+                    <li><span class="caret">Studying</span>
                         <ul class="nested">
                             <li><a href=" https://github.com" target="_blank">Github<br></a></li>
                             
@@ -206,17 +205,10 @@
         </ul>
         </section>
             <section id="section2">
-                <!--Linkkien postaus databasen kautta kesken-->
-                <!--action=postlink.php tämän voine tehdä myös suoraan funktiolle scriptin ulkopuolella-->
-                <!--   <form action="postlink.php" id="postlinktext">
-            <input type="text" placeholder="Sivun nimi:" id="pagename" name="pagename"><br>
-            <input type="text" placeholder="Linkki:" id="pagelink" name="pagelink"><br><br>
-        </form><br>
-       <button type="button" id="button" onclick="lisaaSivu()">Lisää sivusto hakemistopuuhun</button>-->
-          
+                          
         <div class="grid-item item2">
 
-            <button type="button" id="button" onclick="spellPotLaskuri()">Laske Ap potionit</button>
+            <button type="button" id="button" onclick="spellPotCalculator()">Calculate AP potions</button>
             <br><br><br>
         </div>
         <div class="grid-item item3">
@@ -251,69 +243,37 @@
                 });
             }
 
-
-            /* PALVELIMEN KANSSA KÄYTETTÄVÄÄ TIETUETTA */
-
-
-            /*       function hakemisto(nimi, linkki) {
-                    this.nimi = nimi;
-                    this.linkki = linkki;
-
-
-                }
-                apu = new hakemisto("eso2 ",
-                    "<a href='https://www.elderscrollsonline.com' target='_blank'>Eso main site<br></a>");
-                document.getElementById("JS").innerHTML = "<br>" + apu.nimi;
-                document.getElementById("JS").innerHTML += "<br>" + apu.linkki;
-
-                function lisaaSivu() {
-                    let text;
-                    let linkki = prompt("Syötä linkki:");
-                    let nimi = prompt("Syötä linkin nimi:")
-                    if (linkki == null || linkki == "") {
-                        text = "Tyhjä kenttä, syötä jotain";
-                    } else if (nimi == null || nimi == "") {
-                        text = "Tyhjä kenttä, syötä jotain";
-                    } else {
-                        text = "Lisätään <br>" + linkki + "<br>nimen " + nimi + " alle."
-                    }
-                    document.getElementById("JS").innerHTML = text;
-
-                }
-*/
-            function spellPotLaskuri() {
-                var pottu = 720;
-                let kysymys = prompt(
-                    "Kumman lasket, paljon tarvitsee AP:ta pottuja varten, \nvaiko paljon voit ostaa pottuja AP määrällä? \n1 = tarvittava AP\n2 = paljon pottuja saa AP-määrällä"
+            function spellPotCalculator() {
+                const potion = 720;
+                let question = prompt(
+                    "Which result you want,\n1 = Necessary AP for amount of pots\n2 = How much pots you get with AP you input"
                 );
-                if (kysymys == 1) {
-                    spellPotLaskuri1();
+                if (question == 1) {
+                    firstCalc();
 
-                } else if (kysymys == 2) {
-                    spellPotLaskuri2();
+                } else if (question == 2) {
+                    secondCalc();
                 } else {
-                    document.getElementById("JS").innerHTML = "Kiitos"
+                    document.getElementById("JS").innerHTML = "Thank you"
                 }
             }
 
-            function spellPotLaskuri1() {
-                var pottu = 720;
-                let tarvittavatPotut = prompt("Syötä tarvittavien pottujen määrä");
-                result = tarvittavatPotut * pottu
-                document.getElementById("JS").innerHTML = tarvittavatPotut + " pottua varten tarvitset <br> " +
-                    result + " verran AP:ta";
+            function firstCalc() {
+                const potion2 = 720;
+                let necessaryPots = prompt("Please give the amount of necessary potions");
+                result = necessaryPots * potion2
+                document.getElementById("JS").innerHTML = necessaryPots + " potions, you need this much  <br> " +
+                    result + " AP";
 
             }
 
-            function spellPotLaskuri2() {
-                var pottu = 720;
-                let apmaara = prompt("Syötä AP-määrä");
-                result2 = apmaara / pottu
-                document.getElementById("JS").innerHTML = "Voit ostaa " + result2 + " pottua"
+            function secondCalc() {
+                const potion3 = 720;
+                let apAmount = prompt("Please give the amount of AP");
+                result2 = apAmount / potion3
+                document.getElementById("JS").innerHTML = "You can buy this much " + result2 + " potions"
 
-            }
-            //luuri.liittyma = "Elisa";
-            //luuri.hinta = "40";
+            }        
         </script>
         </section>
         </div>
