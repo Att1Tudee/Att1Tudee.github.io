@@ -1,61 +1,21 @@
 <!DOCTYPE html>
 <html lang="fi">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <title>My very own website</title>
     <style>
         body {
-            background-color: gray;
             background-image: url("https://airwallpaper.com/wp-content/uploads/wall003/Abstract-Website-Backgrounds.jpg");
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            gap: 10px;
-            padding: 10px;
-        }
-
-        .grid-item {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .item1 {
-            grid-column: 1 / span 3;
-            grid-row: 1;
-        }
-
-       
-        .item2 {
-            grid-column: 1 / span 3;
-            grid-row: 2;
-        }
-
-        .item3 {
-            grid-column: 1 / span 3;
-            grid-row: 3;
-        }
-        
-        .item4 {
-            grid-column: 1 / span 3;
-            grid-row: 3;
-        }
-        
-        .item5 {
-            grid-column: 1 / span 3;
-            grid-row: 4;
-        }
-        .item6 {
-            font-family: "Bebas Neue", Helvetica, sans-serif;
-            
-        }
-
+        /* Dropdown area (note the loop script is in JS section) */
         ul,
         #myUL {
             font-size: 50px;
@@ -67,6 +27,9 @@
             cursor: pointer;
             user-select: none;
 
+        }
+        .caret:hover {
+            color: rgb(4, 44, 224);
         }
 
         .caret::before {
@@ -95,43 +58,80 @@
             display: block;
         }
 
-        /* Input area for links*/
+        /* The grid order */
 
-        #pagename {
-            font-size: 50px;
-            background-color: #8B8488;
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+
+        .item1 {
+            grid-column: 1 / span 1;
+            grid-row: 1;
+        }
+
+       
+        .item2 {
+            grid-column: 1 / span 3;
+            grid-row: 2;
+        }
+        
+
+        .item3 {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+        
+        
+        .item4 {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+        
+        .item5 {
+            grid-column: 1 / span 3;
+            grid-row: 4;
+        }
+        .item6 {
             font-family: "Bebas Neue", Helvetica, sans-serif;
-
+            
         }
 
-        #pagelink {
-            font-size: 50px;
-            background-color: #8B8488;
-            font-family: "Bebas Neue", Helvetica, sans-serif;
+        /* sections etc*/
 
-        }
 
-        #postlinktext {
-            font-size: 50px;
-        }
-
+        /* ap pot calculation area is button*/
         #button {
             font-size: 50px;
             background-color: #7e13d4;
             font-family: "Bebas Neue", Helvetica, sans-serif;
 
         }
-
-        /* section1 */
+        #button:hover {
+            color: rgb(4, 44, 224);
+        }
+        /* section1  which is the dropdown area(note the dropdown loop script is in JS area)*/
         #section1 {
             font-family: "Bebas Neue", Helvetica, sans-serif;
 
         }
 
-        /* section2 */
+        /* section2  which is calculate pots, esosearch, TTC search and advanced search area */
+
         #section2 {
             font-family: "Bebas Neue", Helvetica, sans-serif;
 
+        }
+        #section2:hover {
+            color:rgb(4, 44, 224)
         }
 
         /* ESOSEARCH */
@@ -140,9 +140,12 @@
             background-color: #811cd4;
             font-size: 50px;
             font-family: "Bebas Neue", Helvetica, sans-serif;
-
         }
-
+        #esosearch:hover {
+            color: rgb(4, 44, 224);
+        }
+        
+        
         /*TTC Search*/
         #ttcsearch {
             background-color: #811cd4;
@@ -150,12 +153,18 @@
             font-family: "Bebas Neue", Helvetica, sans-serif;
 
         }
-
+        #ttcsearch:hover {
+            color: rgb(4, 44, 224);
+        }
+       
         #ttcadvsearch {
             font-size: 40px;
             font-family: "Bebas Neue", Helvetica, sans-serif;
             color: aqua;
 
+        }
+        #ttcadvsearch:hover {
+            color: rgb(4, 44, 224);
         }
 
         /* JAVASCRIPT area */
@@ -164,15 +173,15 @@
             color: #811cd4;
             font-size: 50px;
         }
-    </style>
+        </style>
 </head>
-
 <body>
-
     <div class="grid-container">
-        <ul id="myUL">
+        <section id="section1">
+
             <div class="grid-item item1">
-                <section id="section1">
+                <ul id="myUL">
+
                     <!--ESO-->
                     <li><span class="caret">Eso</span>
                         <ul class="nested">
@@ -201,17 +210,18 @@
                             <li><a href="https://soundcloud.com/errantmindband" target="_blank">Soundcloud<br></a></li>
                         </ul>
                     </li>
-            </div>
-        </ul>
-        </section>
+                </ul>
+
+                 </div>
+                </section>
             <section id="section2">
                           
-        <div class="grid-item item2">
+        <div class="grid-item item2" >
 
             <button type="button" id="button" onclick="spellPotCalculator()">Calculate AP potions</button>
             <br><br><br>
         </div>
-        <div class="grid-item item3">
+        <div class="grid-item item3" >
 
         <form method="get" action="https://eso-hub.com/en/search" target="_blank">
             <input type="text" id="esosearch" placeholder="ESO Search" name="query" size="12" value="">
@@ -228,57 +238,44 @@
         <a href="https://us.tamrieltradecentre.com/pc/Trade/Search" target="_blank" id="ttcadvsearch"><b>TTC Advanced
             Search</b><br></a>
         </div>
-        <!--JAVASCRIPT-OSIO-->
     </div>
+    <!--JAVASCRIPT-->
     <div class="grid-item item6">
-    <p id="JS">
-        <script>
-            var toggler = document.getElementsByClassName("caret");
-            var i;
+        <p id="JS">
+            <script>
 
-            for (i = 0; i < toggler.length; i++) {
-                toggler[i].addEventListener("click", function () {
-                    this.parentElement.querySelector(".nested").classList.toggle("active");
-                    this.classList.toggle("caret-down");
-                });
-            }
-
-            function spellPotCalculator() {
-                const potion = 720;
-                let question = prompt(
-                    "Which result you want,\n1 = Necessary AP for amount of pots\n2 = How much pots you get with AP you input"
-                );
-                if (question == 1) {
-                    firstCalc();
-
-                } else if (question == 2) {
-                    secondCalc();
-                } else {
-                    document.getElementById("JS").innerHTML = "Thank you"
+                // This is the loop for section1 dropdown field
+                let toggler = document.getElementsByClassName("caret");
+                let i;
+    
+                for (i = 0; i < toggler.length; i++) {
+                    toggler[i].addEventListener("click", function () {
+                        this.parentElement.querySelector(".nested").classList.toggle("active");
+                        this.classList.toggle("caret-down");
+                    });
                 }
-            }
 
-            function firstCalc() {
-                const potion2 = 720;
-                let necessaryPots = prompt("Please give the amount of necessary potions");
-                result = necessaryPots * potion2
-                document.getElementById("JS").innerHTML = necessaryPots + " potions, you need this much  <br> " +
-                    result + " AP";
-
-            }
-
-            function secondCalc() {
-                const potion3 = 720;
-                let apAmount = prompt("Please give the amount of AP");
-                result2 = apAmount / potion3
-                document.getElementById("JS").innerHTML = "You can buy this much " + result2 + " potions"
-
-            }        
-        </script>
-        </section>
-        </div>
-    </p>
-</div>
+                const potion = 720
+                function spellPotCalculator() {
+                    
+                    const question = prompt(
+                        "Which option you want,\n1 = Necessary AP for given amount of pots\n2 = How much potions you get with AP you input"
+                    );
+                    if (question == 1) {                        
+                        const necessaryPots = prompt("Please give the amount of potions needed:");
+                    result = necessaryPots * potion
+                    alert("For " + necessaryPots + " potions, you need " +
+                        result + " AP");
+                    } else if (question == 2) {
+                        const apAmount = prompt("Please give the amount of AP");
+                    result2 = apAmount / potion
+                    alert("You can buy this much " + result2 + " potions.")                   
+                    } else {
+                        alert("Please choose either option 1 or 2.");
+                    }
+                }              
+            </script>
+            </section>
+            </div>
 </body>
-
 </html>
