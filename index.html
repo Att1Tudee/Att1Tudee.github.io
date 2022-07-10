@@ -269,16 +269,19 @@
                     const question = prompt(
                         "Which option you want,\n1 = Necessary AP for given amount of pots\n2 = How much potions you get with AP you input"
                     );
-                    if (question == 1) {                        
-                        const necessaryPots = prompt("Please give the amount of potions needed:");
+                    switch (question) {                        
+                        case'1':
+                        const necessaryPots = prompt("Please give the amount of potions needed:",200);
                     result = necessaryPots * potion
                     alert("For " + necessaryPots + " potions, you need " +
                         result + " AP");
-                    } else if (question == 2) {
-                        const apAmount = prompt("Please give the amount of AP");
+                        break;
+                        case'2': 
+                        const apAmount = prompt("Please give the amount of AP",1000000);
                     result2 = apAmount / potion
                     alert("You can buy this much " + result2 + " potions.")                   
-                    } else {
+                    break;
+                    default:
                         alert("Please choose either option 1 or 2.");
                     }
                 }              
